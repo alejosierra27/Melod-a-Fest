@@ -1,0 +1,523 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Añadir más padding para un mejor margen */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Color del logo */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Más espacio entre los elementos del menú */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #a98c5a; /* Color dorado para el texto del menú */
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+header nav ul li a:hover {
+    color: #333; /* Color más oscuro al pasar el cursor */
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #a98c5a; /* Color dorado para el subrayado */
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%; /* Subrayado se expande al 100% al pasar el cursor */
+}
+
+.hero {
+    background-image: url('../images/header.JPG');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.btn-main {
+    padding: 10px 20px;
+    background-color: #a98c5a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.info {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.info p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 15px;
+}
+
+.btn {
+    display: block;
+    padding: 10px 20px;
+    margin: 15px;
+    background-color: #a98c5a;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en dispositivos pequeños */
+    gap: 20px;
+    padding: 40px 20px;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+.event-card {
+    position: relative;
+    flex: 1 1 45%; /* Ajusta el ancho al 45% en pantallas grandes y permite que se reduzca en pantallas pequeñas */
+    max-width: 500px;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 250px; /* Fija la altura de las tarjetas de evento */
+}
+
+.event-card img {
+    width: 100%;
+    height: 100%; /* Ajusta la imagen a la altura de la tarjeta */
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.event-info {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté encima de la imagen */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el texto */
+    border-radius: 8px;
+}
+
+.event-info h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.event-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+
+/* Sección Artistas Estelares */
+.artists {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.artists h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.artists p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.artist {
+    display: flex;
+    gap: 20px;
+    text-align: left;
+    align-items: center;
+}
+
+.artist:nth-child(even) {
+    flex-direction: row-reverse; /* Alterna la posición de la imagen para los elementos pares */
+    text-align: right;
+}
+
+.artist img {
+    width: 200px; /* Tamaño de imagen ajustado */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.artist-info {
+    flex: 1;
+}
+
+.artist-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.artist-info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Sección de Entradas */
+.tickets {
+    background-color: #333;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tickets h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.tickets p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #bbb;
+}
+
+.ticket-options {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.ticket {
+    text-align: center;
+    width: 250px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticket img {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio de forma uniforme */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ticket h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.ticket p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #a98c5a;
+    margin-top: auto;
+}
+
+
+/* Sección Momentos Inolvidables */
+.moments {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.moments h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.moments p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.moment-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 10px; /* Espacio reducido entre las imágenes */
+    justify-items: stretch; /* Hace que las imágenes ocupen el ancho completo de la columna */
+}
+
+.moment {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.moment img {
+    width: 100%;
+    height: 300px; /* Altura fija para que todas las imágenes tengan la misma altura */
+    object-fit: cover; /* Asegura que la imagen se recorte para llenar el espacio de forma uniforme */
+    display: block;
+    border-radius: 8px;
+}
+/* Sección Recordando Nuestros Éxitos */
+.success-stories {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.success-stories h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.success-stories p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.success-cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: stretch; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.success-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido verticalmente */
+}
+
+.success-card img {
+    width: 100%;
+    height: 150px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Recorta la imagen para que se ajuste a la altura fija */
+}
+
+.success-card h3 {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.success-card p {
+    font-size: 14px;
+    margin: 15px;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+}
+
+.success-card .btn {
+    display: block;
+    padding: 10px;
+    margin: 15px;
+    background-color: #a98c5a;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a98c5a;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+/* Media Query para móviles pequeños (menores a 600px) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-cards,
+    .ticket-options,
+    .success-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .moment-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Media Query para tabletas (entre 600px y 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .info-cards,
+    .ticket-options,
+    .success-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .events {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .moment-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .artist-list {
+        gap: 20px;
+    }
+}
+
+/* Ajustes adicionales para todos los dispositivos */
+@media (max-width: 1024px) {
+    /* Ajuste de ancho de las tarjetas en pantallas más pequeñas */
+    .info-cards .card,
+    .ticket-options .ticket,
+    .success-cards .success-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .artist img {
+        width: 150px;
+    }
+}
+
+/* Opcional: ajuste de la tipografía para dispositivos móviles */
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .btn, .btn-main {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
